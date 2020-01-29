@@ -1,3 +1,30 @@
+# USC setup:
+
+source /usr/usc/python/2.7.6/setup.sh 
+pip install statistics --user
+pip install os --user
+pip install random --user
+pip install numpy --user
+
+source /usr/usc/R/3.6.0/setup.sh
+
+R
+
+install.packages('gplots', dependencies=TRUE)
+install.packages('RColorBrewer', dependencies=TRUE)
+install.packages('glmnet', dependencies=TRUE)
+
+type: yes
+choose option: 58
+
+
+cd GEDITv1.4
+
+python GEDIT.py -mix path/to/Gene_Name_Matrix.csv -ref references/LM22_Full.tsv
+
+This will spit out an R command to standard out (or in the log file if job submitted), which you can execute to produce the final predictions, which will be generated inside the predictions folder.
+
+
 # hoffman setup:
 
 module load python/2.7
